@@ -1,6 +1,6 @@
 <template>
     <div class="aside-module">
-        <el-button color="#626aef" :dark="isDark" @click="goActivity">Activity</el-button>
+        <el-button color="#626aef" @click="goActivity">Activity</el-button>
     </div>
 </template>
 <script lang="ts" setup> 

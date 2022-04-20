@@ -1,13 +1,7 @@
 <script lang="ts" setup>
-import
-MyHeader
-from './modules/MyHeader.vue'
-import
-MyAside
-from './modules/MyAside.vue'
-import {
-    RouterView
-} from 'vue-router';
+import MyHeader from "./modules/MyHeader.vue";
+import MyAside from "./modules/MyAside.vue";
+import { RouterView } from "vue-router";
 </script>
 
 <template>
@@ -28,8 +22,11 @@ import {
 </div>
 </template>
 <style lang="less">
-    .common-layout{
-       width:100%;
-       height:100%; 
-    }
+.common-layout {
+  width: 100%;
+  height: 100%;
+  .el-header {
+    --el-header-padding: 0px;
+  }
+}
 </style>
