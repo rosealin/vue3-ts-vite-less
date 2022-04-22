@@ -1,14 +1,18 @@
 <script setup>
-import {
-    onMounted
-} from "vue";
-import {
-    useActivityStore
-} from "@/stores/activity";
+import { onMounted, reactive, ref } from "vue";
+import { useActivityStore } from "@/stores/activity";
 const activity = useActivityStore();
 
 onMounted(() => {
-    activity.getActivitylist({page:1,page_size:3});
+  activity.getActivitylist({ page: 1, page_size: 3 });
+});
+
+const state = reactive({
+  count: 0
+});
+const name = ref("zcc");
+const status = ref({
+  count: 1
 });
 </script>
 <template>
@@ -27,19 +31,22 @@ onMounted(() => {
             <div v-for="o in 4" :key="o" class="text item">{{ 'List item ' + o }}</div>
         </el-card>
     </div>
+    <div>state: {{state.count}}</div>
+    <div>name: {{name}}</div>
+    <div>status: {{status}}</div>
 </div>
 </template>
 
 <style lang="less" scoped>
 .activity-module {
-    .top {
-        background: var(--vt-c-divider-dark-2);
-        margin-bottom: 20px;
+  .top {
+    background: var(--vt-c-divider-dark-2);
+    margin-bottom: 20px;
+  }
+  &-list {
+    .box-card {
+      width: 30%;
     }
-    &-list{
-        .box-card{
-            width:30%; 
-        }
-    }
+  }
 }
 </style>

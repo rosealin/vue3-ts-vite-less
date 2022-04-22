@@ -8,11 +8,16 @@ const router = createRouter({
       path: '/',
       name: 'index',
       component: Index,
+      redirect: '/activity',
       children: [
         {
           path: '/activity',
           name: 'activity',
           component: () => import("@/views/activity/Index.vue")
+        },{
+          path: '/modal',
+          name: 'modal',
+          component: () => import("@/views/list/modal.vue")
         },
       ]
     },

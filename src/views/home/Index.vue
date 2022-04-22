@@ -1,14 +1,24 @@
 <script lang="ts" setup>
 import MyHeader from "./modules/MyHeader.vue";
 import MyAside from "./modules/MyAside.vue";
-import { RouterView } from "vue-router";
+import {
+    RouterView
+} from "vue-router";
+import {
+    ref
+} from 'vue';
+const title = ref('zyy')
+const deleteName = (val) => {
+    console.log('111')
+    console.log(val)
+}
 </script>
 
 <template>
 <div class="common-layout">
     <el-container>
         <el-header>
-            <MyHeader />
+            <MyHeader :title="title" @deleteName="deleteName()" />
         </el-header>
         <el-container>
             <el-aside width="200px">
@@ -21,12 +31,14 @@ import { RouterView } from "vue-router";
     </el-container>
 </div>
 </template>
+
 <style lang="less">
 .common-layout {
-  width: 100%;
-  height: 100%;
-  .el-header {
-    --el-header-padding: 0px;
-  }
+    width: 100%;
+    height: 100%;
+
+    .el-header {
+        --el-header-padding: 0px;
+    }
 }
 </style>
