@@ -6,7 +6,6 @@
 </template>
 <script lang="ts" setup> 
 import router from '@/router'
-const routes = router.getRoutes();
     const goActivity = (type)=>{
         router.push(`/${type}`);
     }
